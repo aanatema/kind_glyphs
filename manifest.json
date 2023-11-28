@@ -7,5 +7,8 @@
     "action": {
         "default_popup": "index.html",
         "default_title": ""
+    },
+    "icons": {
+        "128":"be-nice_128.png"
     }
 }
