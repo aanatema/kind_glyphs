@@ -1,0 +1,11 @@
+{
+    "name": "Kind Glyphs",
+    "version": "1.0.0",
+    "description": "No more insults or bad words to tarnish your mood, only colorful emojis to keep your browsing peaceful!",
+    "manifest_version": 3,
+    "author": "aanatema",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": ""
+    }
+}
