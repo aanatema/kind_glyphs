@@ -1,7 +1,6 @@
+//PREMIERE ETAPE
+
 //je veux échanger la valeur de "input" par la valeur de "transform"
-
-let transform = "🌟💌🌸💖";
-
 // function getValue() {
 //   let input = document.getElementById("input").value;
 //   input = transform;
@@ -9,24 +8,29 @@ let transform = "🌟💌🌸💖";
 // }
 // getValue();
 
-//je veux créer un tableau qui contiendra une suite de mots, 
-//ces mots seront comparés avec la valeur de l'input 
+//DEUXIEME ETAPE
+//je veux créer un tableau qui contiendra une suite de mots,
+//ces mots seront comparés avec la valeur de l'input
 //la valeur de l'input sera changée si il y a correspondance
 
-let forbiddenWords = "oli" 
-//["azerty", "caramel", "santa", "téléportation"];
+let transform = "🌟💌🌸💖";
+let forbiddenWords = ["caramel", "santa", "azerty","téléportation"];
 
 function swapForbiddenWords() {
-    let input = document.getElementById("input").value;
-    if(input == forbiddenWords){
-        input = transform
-        console.log(input)
+  let input = document.getElementById("input").value;
 
-    }else{
+  //boucle for pour itérer sur le tableau et comparer chaque élément avec la valeur de l'input
+  for (let i = 0; i < forbiddenWords.length; i++) {
+    if (input == forbiddenWords[i]) {
+        input = transform;
+        console.log(input);
+     //le break permet de sortir de la boucle si il y a correspondance
+      break;
+    } else{
         console.log(input)
     }
-    return input
     
+  }
 }
 
 swapForbiddenWords();
