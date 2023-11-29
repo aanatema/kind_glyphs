@@ -8,11 +8,15 @@ h1{
 
 }
 
-#addBtn{
+#button{
     background-color:white;
 }
 
-#addBtn:hover{
+#button:hover{
     background-color:#7393B3 ;
-    color:black;
+    color:white;
+}
+
+#input{
+    background-color: white;
 }

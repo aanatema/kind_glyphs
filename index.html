@@ -1,5 +1,3 @@
-//création 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +10,10 @@
 <body>
     <h1>Add a forbidden word: </h1>
     <input type="text" placeholder="your word" id="input">
-    <button type="button" onclick="swapForbiddenWords();" id="addBtn">add</button>
-  
+    <button type="button" onclick="swapForbiddenWords();" id="button">add</button>
+    <br></br>
+    <button type="button" onclick="showUsersForbiddenWords();" id="button">See all of your forbidden words</button>
+    <p>Your last forbidden word: <span id="input_value"> </span></p>
+    <p>Will be replaced by:<span id="emoji_suite"></span></p>
 </body>
 </html>
