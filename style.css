@@ -1,0 +1,18 @@
+*{
+  background-color: #F8C8DC;
+}
+
+
+h1{
+    color:#7393B3
+
+}
+
+#addBtn{
+    background-color:white;
+}
+
+#addBtn:hover{
+    background-color:#7393B3 ;
+    color:black;
+}
