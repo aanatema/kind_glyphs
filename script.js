@@ -14,15 +14,20 @@
 //la valeur de l'input sera changée si il y a correspondance
 
 let transform = "🌟💌🌸💖";
+let forbiddenWords = [];
 
-function usersForbiddenWords(){
-
+//permet d'ajouter des mots à bannir
+function usersForbiddenWords() {
+  let input = document.getElementById("input").value;
+  //remplacer à terme if par un switch
+  if (input != "" || input != " ") {
+    forbiddenWords.push(input);
+    console.log(forbiddenWords);
+  }
 }
 usersForbiddenWords();
 
-let forbiddenWords = ["caramel", "santa", "azerty", "téléportation"];
-
-
+//
 function swapForbiddenWords() {
   let input = document.getElementById("input").value;
 
@@ -36,17 +41,14 @@ function swapForbiddenWords() {
       console.log(input);
     }
   }
-  //affiche la dernière addition et ce par quoi le mot va être remplacé
-  document.getElementById('input_value').innerHTML = input;
-  document.getElementById('emoji_suite').innerHTML = transform;
 }
 swapForbiddenWords();
 
 //cette fonction permet d'afficher les mots que l'utilisateur.ice aura renseigné
 function showUsersForbiddenWords(){
-
+    let input = document.getElementById("input").value;
+    document.getElementById("emoji_suite").innerHTML = transform;
+    document.getElementById("list").innerHTML = forbiddenWords;
 
 }
 showUsersForbiddenWords();
-
-//je souhaite faire apparaître le dernier input sur le html et montrer ce pas quoi il va être remplacé.
