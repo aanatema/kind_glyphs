@@ -20,3 +20,7 @@ h1{
 #input{
     background-color: white;
 }
+
+:focus{
+    outline:red
+}

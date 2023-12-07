@@ -16,29 +16,37 @@
 let transform = "🌟💌🌸💖";
 let forbiddenWords = [];
 
+
+let input = document.getElementById("button").addEventListener("click", saveForbiddenWord);
+let swapInput = document.getElementById("button").addEventListener("click", swapForbiddenWords);
+let showInput = document.getElementById("button").addEventListener("click", showUsersForbiddenWords);
+let htmlInput = document.getElementById("html_input").value
+
 //permet d'ajouter des mots à bannir
-function usersForbiddenWords() {
-  let input = document.getElementById("input").value;
+function saveForbiddenWord() { 
+
   //remplacer à terme if par un switch
-  if (input != "" || input != " ") {
-    forbiddenWords.push(input);
+  if (html_input != "" || html_input != " ") {
+    forbiddenWords.push(html_input);
     console.log(forbiddenWords);
   }
+  
 }
-usersForbiddenWords();
+console.log(saveForbiddenWord());
+
 
 //
 function swapForbiddenWords() {
-  let input = document.getElementById("input").value;
+let swap = document.getElementById("html_input").value;
 
   //boucle for pour itérer sur le tableau et comparer chaque élément avec la valeur de l'input
   for (let i = 0; i < forbiddenWords.length; i++) {
-    if (input == forbiddenWords[i]) {
-      input = transform;
-      console.log(input);
+    if (swap == forbiddenWords[i]) {
+      swap = transform;
+      console.log(swap);
       break;
     } else {
-      console.log(input);
+      console.log(swap);
     }
   }
 }
@@ -46,7 +54,7 @@ swapForbiddenWords();
 
 //cette fonction permet d'afficher les mots que l'utilisateur.ice aura renseigné
 function showUsersForbiddenWords(){
-    let input = document.getElementById("input").value;
+    document.getElementById("html_input").value = showInput;
     document.getElementById("emoji_suite").innerHTML = transform;
     document.getElementById("list").innerHTML = forbiddenWords;
 

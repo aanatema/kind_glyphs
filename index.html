@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kind Glyphs</title>
-    <script src="script.js"></script>
+   
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <h1>Add a forbidden word: </h1>
-    <input type="text" placeholder="your word" id="input">
-    <button type="button" onclick="usersForbiddenWords();" id="button">add a word to your list</button>
+    <input type="text" required="required" id="html_input">
+    <p id="msg"></p>
+    <button type="button" id="button">add a word to your list</button>
     <br></br>
-    <button type="button" onclick="swapForbiddenWords();" id="button">swap it</button>
+    <button type="button" id="button">swap it</button>
     <br></br>
-    <button type="button" onclick="showUsersForbiddenWords();" id="button">see your forbidden words</button>
+    <button type="button" id="button">see your forbidden words</button>
     <p>Your forbidden words will be replaced by: <span id="emoji_suite"></span></p>
     <p>Those are the words you've already banned: <span id="list"></span></p>
-</body>
+</body> 
+<script src="script.js"></script>
 </html>
