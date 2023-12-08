@@ -12,10 +12,29 @@ h1{
     background-color:white;
 }
 
+#save_button{
+    background-color:white;
+}
+
+#show_button{
+    background-color:white;
+}
+
 #button:hover{
     background-color:#7393B3 ;
     color:white;
 }
+
+#save_button:hover{
+    background-color:#7393B3 ;
+    color:white;
+}
+
+#show_button:hover{
+    background-color:#7393B3 ;
+    color:white;
+}
+
 
 #input{
     background-color: white;

@@ -1,48 +1,75 @@
+let space = "🛸👾🚀🪐🌠👨‍🚀☄️🛰️💫🌘";
+let natureGreen = "🌳🌻🌿☘️🍃🌱🌲";
+let flowers = "💐🌱🌷🌻🌹🌼🌸🪷";
+let fruits = "🍇🍎🍌🍊🍓🥝🫐🍒🍋🍉🍑";
+let franceEmojis = "🥦🌻🥦🌻🥦🌻🥦🌻";
+let elineEmojis = "🐇🌽🐇🌽🐇🌽🐇🌽";
+let autumn = "🦔🍂🍁🦉🌰🧡🎃🦊🍯🍄🐿️🪵";
+let spring = "💐🧺🐇🌿🌷🦋🌼🌱🐝🐣";
+let summer = "🍍🍧🦋☀️🌻🍉🌅🎐";
+let winter = "🦌🎄🐇🌟❄️🕯️⛄🧣🐧🎠";
+let love = "💗🎀💌💓🧸🕊️❤️💐🏹💕";
 
-let transform = "🌟💌🌸💖";
-let forbiddenWords = [];
+let transform = "🦔🍂🍁🎃🦊🍄🐿️";
+let forbiddenWords = ["la", "de", "un"];
 
 //déclenchement des fonctions
-let input = document.getElementById("button").addEventListener("click", saveForbiddenWord);
-let swapInput = document.getElementById("button").addEventListener("click", swapForbiddenWords);
-let showInput = document.getElementById("button").addEventListener("click", showUsersForbiddenWords);
-let htmlInput = document.getElementById("html_input").value
-console.log(htmlInput)
+//déclenche la fonction saveForbiddenWord lorsque l'on clique sur le bouton "SaveButton"
+document.getElementById("save_button").addEventListener("click", saveForbiddenWord);
+let htmlInput = document.getElementById("html_input").value;
+
+document.getElementById("button").addEventListener("click", swapForbiddenWords);
+document.getElementById("show_button").addEventListener("click", showForbiddenWords);
+
 //permet d'ajouter des mots à bannir
-function saveForbiddenWord() { 
-
+function saveForbiddenWord() {
   //remplacer à terme if par un switch
-  if (htmlInput != "" || htmlInput != " ") {
+  if (htmlInput != "" && htmlInput != " " && htmlInput != forbiddenWords) {
     forbiddenWords.push(htmlInput);
-    console.log(forbiddenWords);
+    console.log("tableau fbw:", forbiddenWords);
+  } else {
   }
-  
 }
-console.log(saveForbiddenWord());
+saveForbiddenWord();
 
+// permet d'iterer sur le contenu de la page et de voir si il y a des correspondances avec le tableau "forbiddenWords"
+function scanAndReplace() {
+  const text = document.querySelectorAll(
+    "h1",
+    "h",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "p"
+  );
 
-//
+  for (let i = 0; i < text.length; i++) {
+    if (text[i].innerHTML.includes(forbiddenWords)) {
+      text[i].innerHTML = text[i].innerHTML.replace(transform);   
+    } else {
+    }
+  }
+}
+scanAndReplace();
+
 function swapForbiddenWords() {
-let swap = document.getElementById("html_input").value;
-
   //boucle for pour itérer sur le tableau et comparer chaque élément avec la valeur de l'input
   for (let i = 0; i < forbiddenWords.length; i++) {
-    if (swap == forbiddenWords[i]) {
-      swap = transform;
-      console.log(swap);
+    if (htmlInput == forbiddenWords[i]) {
+      htmlInput = transform;
+      console.log("show swaped html input:", htmlInput);
       break;
     } else {
-      console.log(swap);
+      console.log("show non swaped html input:", htmlInput);
     }
   }
 }
 swapForbiddenWords();
 
-//cette fonction permet d'afficher les mots que l'utilisateur.ice aura renseigné
-function showUsersForbiddenWords(){
-    showInput = htmlInput;
-    document.getElementById("emoji_suite").innerHTML = transform;
-    document.getElementById("list").innerHTML = forbiddenWords;
-
+function showForbiddenWords() {
+  document.getElementById("forbidden_list").innerHTML = forbiddenWords;
 }
-showUsersForbiddenWords();
+
+//affiche la suite d'emojis actuellement séléctionnée
+document.getElementById("emoji_suite").innerHTML = transform;

@@ -1,14 +1,20 @@
 {
-    "name": "Kind Glyphs",
-    "version": "1.0.0",
-    "description": "No more insults or bad words to tarnish your mood, only colorful emojis to keep your browsing peaceful!",
-    "manifest_version": 3,
-    "author": "aanatema",
-    "action": {
-        "default_popup": "index.html",
-        "default_title": ""
-    },
-    "icons": {
-        "128":"be-nice_128.png"
+  "name": "Kind Glyphs",
+  "version": "1.0.0",
+  "description": "No more insults or bad words to tarnish your mood, only colorful emojis to keep your browsing peaceful!",
+  "manifest_version": 3,
+  "author": "aanatema",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
     }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": ""
+  },
+  "icons": {
+    "128": "be-nice_128.png"
+  }
 }
